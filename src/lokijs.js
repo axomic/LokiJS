@@ -849,9 +849,7 @@
      * @param {function} callback - the callback to handle the result
      */
     LokiFsAdapter.prototype.loadDatabase = function loadDatabase(dbname, callback) {
-      this.fs.readFile(dbname, {
-        encoding: 'utf8'
-      }, function readFileCallback(err, data) {
+      this.fs.readFile(dbname, 'utf8', function readFileCallback(err, data) {
         if (err) {
           callback(new Error(err));
         } else {
